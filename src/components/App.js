@@ -7,20 +7,25 @@ import LoadingBar from 'react-redux-loading'
 import NewTweet from './NewTweet'
 import TweetPage from './TweetPage'
 import Nav from './Nav'
+import { useEffect } from 'react'
 
 
-class App extends Component {
-  componentDidMount() {
-    this.props.dispatch(handleInitialData())
-  }
-  render() {
+//class App extends Component {
+const App = (props)=>{
+  // componentDidMount() {
+  //   props.dispatch(handleInitialData())
+  // }
+  useEffect(()=>{
+    props.dispatch(handleInitialData())
+  })
+  //render() {
     return (
       <Router>
         <Fragment>
           <LoadingBar />
           <div className='container'>
             <Nav />
-            {this.props.loading === true
+            {props.loading === true
               ? null
               : <div>
                   <Route path='/' exact component={Dashboard} />
@@ -31,7 +36,7 @@ class App extends Component {
         </Fragment>
       </Router>
     )
-  }
+  //}
 }
 
 function mapStateToProps ({ authedUser }) {

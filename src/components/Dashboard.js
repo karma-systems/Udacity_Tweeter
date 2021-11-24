@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Tweet from './Tweet'
 
-class Dashboard extends Component {
-  render() {
+//class Dashboard extends Component {
+const Dashboard = (props)=>{
+  //render() {
     return (
       <div>
         <h3 className='center'>Your Timeline</h3>
         <ul className='dashboard-list'>
-          {this.props.tweetIds.map((id) => (
+          {props.tweetIds.map((id) => (
             <li key={id}>
               <Tweet id={id}/>
             </li>
@@ -16,7 +17,7 @@ class Dashboard extends Component {
         </ul>
       </div>
     )
-  }
+  //}
 }
 
 function mapStateToProps ({ tweets }) {

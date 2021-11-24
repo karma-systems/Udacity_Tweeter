@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import Tweet from './Tweet'
 import NewTweet from './NewTweet'
 
-class TweetPage extends Component {
-  render() {
-    const { id, replies } = this.props
+//class TweetPage extends Component {
+  const TweetPage = (props)=>{
+  //render() {
+    const { id, replies } = props
     return (
       <div>
         <Tweet id={id} />
@@ -20,7 +21,7 @@ class TweetPage extends Component {
         </ul>
       </div>
     )
-  }
+  //}
 }
 
 function mapStateToProps ({ authedUser, tweets, users }, props) {

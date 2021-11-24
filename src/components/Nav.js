@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom'
 
 export default function Nav () {
   return (
-    <nav className='nav'>
-      <ul>
-        <li>
+    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+      <ul className="navbar-nav">
+        <li className="nav-item">
           <NavLink to='/' exact activeClassName='active'>
             Home
           </NavLink>
         </li>
-        <li>
+        <li className="nav-item">
           <NavLink to='/new' activeClassName='active'>
             New Tweet
           </NavLink>
